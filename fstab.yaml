@@ -1,2 +1,3 @@
+# fstab for superside
 mountpoints:
   /: https://drive.google.com/drive/u/0/folders/1ZdlMy9cz1cgkyCjK9Yrl7-mhlIuH03tD
