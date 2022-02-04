@@ -8,6 +8,10 @@ main .table-of-contents {
     margin: 32px 0;   
 }
 
+main .table-of-contents-sticky {
+    display: none;
+}
+
 main .table-of-contents .table-of-contents-card {
     border-bottom: 1px solid #ddd;
     display: block;
@@ -68,4 +72,66 @@ main .table-of-contents h3 {
     main .table-of-contents .table-of-contents-card {
         width: 33%;
     }
+}
+
+@media (min-width: 1300px) {
+    main .table-of-contents-sticky {
+        display: block;
+    }
+        
+    main .table-of-contents-sticky.hidden {
+        display: none;
+    }
+
+    main .table-of-contents-sticky {
+        position: fixed;
+        left: 0;
+        top: 50%;
+        transform: translate(0, -50%);
+        background-color: #f8f8f8;
+        font-size: 16px;
+    }
+
+    main .table-of-contents-sticky p.table-of-contents-eyebrow {
+        margin: 0;
+        padding: 0;
+        color: #ccc;
+    }
+
+    main .table-of-contents-sticky .table-of-contents-card {
+        height: unset;
+        margin: 0;
+        padding: 0;
+        border-top: 1px solid #ccc;
+        padding: 16px 24px;
+        width: 216px;
+    }
+
+    main .table-of-contents-sticky .table-of-contents-card:first-child {
+        border-top: none;
+    }
+
+    main .table-of-contents-sticky .table-of-contents-teaser {
+        display: none;
+    }
+
+    main .table-of-contents-sticky h3 {
+        color: #ccc;
+        font-size: 18px;
+        display: none;
+        font-family: unset;
+        margin: 0;
+        font-weight: normal;
+    }
+
+    main .table-of-contents-sticky .table-of-contents-card:hover p.table-of-contents-eyebrow,
+    main .table-of-contents-sticky .table-of-contents-card.selected p.table-of-contents-eyebrow {
+        color: #333;
+    }
+
+    main .table-of-contents-sticky .table-of-contents-card:hover h3 {
+        display: block;
+        color: #333;
+    }
+    
 }
