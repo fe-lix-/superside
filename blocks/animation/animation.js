@@ -19,27 +19,26 @@ function createAnimation(animation) {
   if (video) {
     const { pathname } = new URL(video);
     if (pathname.endsWith('.mp4')) {
-      const vid = document.createElement('video');
-      ['playsinline', 'loop', 'muted'].forEach((p) => vid.setAttribute(p, ''));
-      vid.addEventListener('canplay', () => {
-        vid.muted = true;
-        vid.play();
-        vid.classList.add('animation-unhide');
-      });
-      div.append(vid);
       const observer = new IntersectionObserver((events) => {
         if (events.some((e) => e.isIntersecting)) {
-          vid.innerHTML = `<source src="${pathname}" type="video/mp4">`;
           observer.disconnect();
+          const vid = document.createElement('video');
+          ['playsinline', 'loop', 'muted', 'autoplay'].forEach((p) => vid.setAttribute(p, ''));
+          vid.innerHTML = `<source src="${pathname}" type="video/mp4">`;
+          div.append(vid);
+          vid.classList.add('animation-unhide');
+          vid.addEventListener('canplay', () => {
+            vid.muted = true;
+            vid.play();
+          });
+          if (still) {
+            still.className = 'animation-still';
+            div.append(still);
+          }
         }
       });
       observer.observe(poster);
     }
-  }
-
-  if (still) {
-    still.className = 'animation-still';
-    div.append(still);
   }
 
   return (div);
