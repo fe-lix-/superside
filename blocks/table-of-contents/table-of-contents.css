@@ -1,0 +1,71 @@
+main .table-of-contents-container > div {
+    max-width: 1200px;
+    box-sizing: border-box;
+    padding: 0 3rem;
+}
+
+main .table-of-contents {
+    margin: 32px 0;   
+}
+
+main .table-of-contents .table-of-contents-card {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    text-decoration: none;
+}
+
+main .table-of-contents .table-of-contents-teaser {
+    display: none;
+}
+
+main .table-of-contents .table-of-contents-eyebrow {
+    margin: 20px 0;
+    color: #5989f3;
+    font-size: 16px;
+}
+
+main .table-of-contents h3 {
+    margin: 20px 0;
+    color: black;
+    font-size: 18px;
+}
+
+@media (min-width: 600px) {
+    main .table-of-contents .table-of-contents-card {
+        border-bottom: unset;
+    }
+
+    main .table-of-contents {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    main .table-of-contents .table-of-contents-card {
+        width: 50%;
+        box-sizing: border-box;
+        padding: 2rem;
+    }
+
+    main .table-of-contents .table-of-contents-card:hover {
+        background-color: #eee;
+    }
+
+    main .table-of-contents h3 {
+        font-size: 24px;
+    }
+
+    main .table-of-contents .table-of-contents-eyebrow {
+        font-size: 18px;
+    }
+    main .table-of-contents .table-of-contents-teaser {
+        display: block;
+        font-size: 16px;
+        color: black;
+    }
+}
+
+@media (min-width: 900px) {
+    main .table-of-contents .table-of-contents-card {
+        width: 33%;
+    }
+}

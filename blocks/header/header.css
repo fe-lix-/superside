@@ -194,3 +194,10 @@ header .nav .nav-brand p {
 header .nav .nav-brand p:nth-child(2) {
   padding-left: 18px;
 }
+
+@media (min-width: 1200px) {
+  header .nav {
+    margin-left: calc((100vw - 1200px + 32px) / 2);
+  }    
+}
+
