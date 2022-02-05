@@ -11,9 +11,12 @@
  */
 
  :root {
-  --link-color: 3,95,230;
+  --link-color: 92 ,255, 133;
+  --dark-link-color: 42, 116, 62;
   --background-color: 255,255,255;
   --text-color: 0,0,0;
+  --font-family-heading: "Futura",Futura,Trebuchet MS,Arial,sans-serif;
+  --font-family-body: "Nunito Sans", "Nunito Sans", Arial, sans-serif;
 }
 
 html {
@@ -24,10 +27,7 @@ html {
 
 body {
   margin: 0;
-  font-family: 'helvetica neue', helvetica,
-  ubuntu,
-  roboto, noto,
-  sans-serif;
+  font-family: var(--font-family-body);
   line-height: 1.6;
   margin: 0;
   color: rgba(var(--text-color),.9);
@@ -54,7 +54,7 @@ h4, h5, h6 {
   line-height: 1.25;
   margin-top: 1em;
   margin-bottom: .5em;
-  font-family: "Futura",Futura,Trebuchet MS,Arial,sans-serif;
+  font-family: var(--font-family-heading);
 }
 
 h1 { font-size: 3.25rem; }
@@ -78,30 +78,35 @@ a:hover {
 }
 
 main input, main button {
+  box-sizing: border-box;
   font-size: 1.25rem;
   width: 100%;
   max-width: 50rem;
   display: block;
   margin-bottom: 1rem;
   padding: 0.75rem 0.6rem;    
-  border-radius: 0.25rem;
 }
 
 main button {
-  color: rgb(var(--background-color));
+  color: rgb(var(--text-color));
   border: none;
-  background-color: rgba(var(--link-color), 0.9);
+  background-color: rgba(var(--link-color));
+  font-weight: 800;
+  font-family: var(--font-family-heading);
+
 }
 
 main button:hover {
-  background-color: rgba(var(--link-color), 1);
+  background-color: rgba(var(--dark-link-color));
   cursor: pointer;
+  color: rgb(var(--background-color));
 }
 
 main input {
   border: 1px solid rgba(var(--text-color),0.5);
   color: rgb(var(--text-color));
   background-color: rgba(var(--background-color), 0.5);
+  font-family: var(--font-family-body);
 }
 
 main input:hover {
@@ -223,4 +228,8 @@ main .hero-section p {
 main .section[data-section-status='loading'], main .section[data-section-status='initialized'] {
     display: none;
   }
-  
+
+main .section.light-logo {
+  background-size: cover;
+  background: url('/styles/logo-bg.jpg');
+}

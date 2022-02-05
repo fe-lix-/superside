@@ -37,7 +37,7 @@ export default function decorate(block) {
   block.append(sticky);
 
   const obs = new IntersectionObserver((entries) => {
-    if (entries.some((entry) => (!entry.isIntersecting && entry.boundingClientRect.top))) {
+    if (entries.some((entry) => (!entry.isIntersecting && entry.boundingClientRect.top < 0))) {
       sticky.classList.remove('hidden');
     } else {
       sticky.classList.add('hidden');

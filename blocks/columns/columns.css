@@ -1,0 +1,89 @@
+main .section > div.columns-wrapper {
+    max-width: 1200px;
+}
+
+main .columns > div {
+    display: flex;
+    flex-direction: column;
+    padding: 24px 0;
+}
+
+main .columns > div:nth-child(even) {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+main .columns .form-container {
+    background-color: white;
+    padding: 32px;
+    max-width: 456px;
+    box-shadow: 0px 1px 6px rgb(34 34 34 / 10%);
+}
+
+main .columns .form-container h3 {
+    font-size: 32px;
+    font-weight: normal;
+}
+
+main .columns .form-container input {
+    border: 1px solid rgb(193,193,195);
+    padding: 11px;
+    border-radius: 0;
+}
+
+main .columns .form-container input:hover {
+    border-color: rgb(90,92,96);
+}
+
+main .columns .form-container label {
+    font-size: 10px;
+    font-weight: 800;
+    font-family: var(--font-family-heading);
+    text-transform: uppercase;
+}
+
+main .columns .form-container .form-checkbox-wrapper {
+    display: flex;
+    margin: 16px 0;
+}
+
+main .columns .form-container .form-checkbox-wrapper input[type='checkbox'] {
+    display: none;
+}
+
+main .columns .form-container .form-checkbox-wrapper input[type='checkbox'] + label:before {
+    float: left;
+    margin-top: 5px;
+    margin-right: 5px;
+    height: 30px;
+    width: 30px;
+    content: ' ';
+    background: url('/styles/checkbox.svg');
+    background-size: contain;
+}
+
+main .columns .form-container .form-checkbox-wrapper input[type='checkbox']:checked +label:before {
+    background: url('/styles/checkbox-checked.svg');
+    background-size: contain;
+    content: ' ';
+}
+
+main .columns .form-container .form-checkbox-wrapper label {
+    font-size: 16px;
+    font-weight: normal;
+    text-transform: none;
+    font-family: var(--font-family-body);
+    display: block;
+
+}
+
+@media (min-width: 900px) {
+    main .columns > div, main .columns > div:nth-child(even) {
+        flex-direction: unset;
+    }
+
+    main .columns > div > div {
+        width: 50%;
+    }
+
+}
