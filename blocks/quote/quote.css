@@ -10,6 +10,8 @@ main .quote .quote-attribution {
 main .quote .quote-attribution p {
     margin: 0;
     font-size: 18px;
+    line-height: 1.25em;
+    flex: 0 0 72px;
 }
 
 main .quote img {
@@ -18,7 +20,6 @@ main .quote img {
     height: 56px;
     border-radius: 28px;
     display: flex;
-    box-sizing: content-box;
     margin-right: 16px;
 }
 

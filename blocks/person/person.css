@@ -1,0 +1,58 @@
+.person-container {
+    background-color: #5989f320;
+    --link-color: 89, 137, 243;
+    padding: 64px;
+}
+
+.person-container > div:first-child > p:first-child > strong {
+    color: rgb(var(--link-color));
+}
+
+
+.person {
+    padding: 32px 0;
+    margin: 48px 0;
+    border: 1px solid #ccc;
+    border-width: 1px 0;
+}
+
+.person-person {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 16px 0;
+    margin-bottom: 32px;
+}
+
+.person-title {
+    margin-right: 64px;
+}
+
+.person-title p {
+    margin: 0;
+    font-size: 16px;
+    color: #777;
+}
+
+.person-title strong {
+    font-family: var(--font-family-heading);
+    font-size: 18px;
+    color: black;
+}
+
+.person-bio {
+    font-size: 16px;
+}
+
+
+.person-photo img {
+    display: block;
+    width: 56px;
+    height: 56px;
+    border-radius: 28px;
+    margin-right: 16px;    
+}
+
+.person-logo img {
+    display: block;
+    height: 56px;
+}

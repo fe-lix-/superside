@@ -116,27 +116,29 @@ const EMBEDS_CONFIG = {
   },
 };
 
-function decorateBlockEmbeds($block) {
-  $block.querySelectorAll('.embed.block a[href]').forEach(($a) => {
-    const url = new URL($a.href.replace(/\/$/, ''));
-    const config = EMBEDS_CONFIG[url.hostname];
-    if (config) {
-      const html = config.embed(url);
-      $block.innerHTML = html;
-      $block.classList = `block embed embed-${config.type}`;
-    } else {
-      $block.innerHTML = getDefaultEmbed(url);
-      $block.classList = `block embed embed-${getServer(url)}`;
-    }
-  });
+function decorateBlockEmbed($block, url) {
+  const config = EMBEDS_CONFIG[url.hostname];
+  if (config) {
+    const html = config.embed(url);
+    $block.innerHTML = html;
+    $block.classList = `block embed embed-${config.type}`;
+  } else {
+    $block.innerHTML = getDefaultEmbed(url);
+    $block.classList = `block embed embed-${getServer(url)}`;
+  }
 }
 
 export default function decorate($block) {
-  const observer = new IntersectionObserver((events) => {
-    if (events.some((e) => e.isIntersecting)) {
-      decorateBlockEmbeds($block);
-      observer.disconnect();
-    }
-  });
-  observer.observe($block);
+  const $a = $block.querySelector('a[href]');
+  $block.textContent = '';
+  if ($a) {
+    const url = new URL($a.href.replace(/\/$/, ''));
+    const observer = new IntersectionObserver((events) => {
+      if (events.some((e) => e.isIntersecting)) {
+        decorateBlockEmbed($block, url);
+        observer.disconnect();
+      }
+    });
+    observer.observe($block);
+  }
 }

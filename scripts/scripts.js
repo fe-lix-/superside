@@ -547,6 +547,10 @@ export function decorateMain(main) {
  */
 async function loadEager(doc) {
   const main = doc.querySelector('main');
+
+  const theme = getMetadata('theme');
+  if (theme) document.body.classList.add(toClassName(theme));
+
   if (main) {
     decorateMain(main);
     await waitForLCP();
@@ -564,7 +568,7 @@ async function loadLazy(doc) {
   loadFooter(doc.querySelector('footer'));
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
-  addFavIcon(`${window.hlx.codeBasePath}/styles/favicon.svg`);
+  addFavIcon(`${window.hlx.codeBasePath}/styles/favicon.ico`);
 }
 
 /**
@@ -573,4 +577,8 @@ async function loadLazy(doc) {
  */
 function loadDelayed() {
   // load anything that can be postponed to the latest here
+  setTimeout(() => {
+    // eslint-disable-next-line
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TP5X26V');
+  }, 4000);
 }
