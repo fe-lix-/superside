@@ -86,4 +86,20 @@ main .columns .form-container .form-checkbox-wrapper label {
         width: 50%;
     }
 
+    main .columns > div > div:first-child {
+        margin-right: 16px;
+    }
+
+    main .columns > div > div:last-child {
+        margin-left: 16px;
+    }
+
+    main .columns .form-container .form-short {
+        width: 48%;
+        display: inline-block;
+    }
+
+    main .columns .form-container .form-short:nth-child(1n+2) {
+        margin-left: 4%;
+    }
 }

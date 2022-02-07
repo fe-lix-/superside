@@ -1,3 +1,22 @@
+function createSelect(fd) {
+  const select = document.createElement('select');
+  select.id = fd.Field;
+  if (fd.Placeholder) {
+    const ph = document.createElement('option');
+    ph.textContent = fd.Placeholder;
+    ph.setAttribute('selected', '');
+    ph.setAttribute('disabled', '');
+    select.append(ph);
+  }
+  fd.Options.split(',').forEach((o) => {
+    const option = document.createElement('option');
+    option.textContent = o.trim();
+    option.value = o.trim();
+    select.append(option);
+  });
+  return select;
+}
+
 function createButton(fd) {
   const button = document.createElement('button');
   button.textContent = fd.Label;
@@ -30,6 +49,10 @@ async function createForm(formURL) {
     const style = fd.Style ? ` form-${fd.Style}` : '';
     fieldWrapper.className = `form-${fd.Type}-wrapper${style}`;
     switch (fd.Type) {
+      case 'select':
+        fieldWrapper.append(createLabel(fd));
+        fieldWrapper.append(createSelect(fd));
+        break;
       case 'button':
         fieldWrapper.append(createButton(fd));
         break;
