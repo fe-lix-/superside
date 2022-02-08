@@ -65,7 +65,11 @@ export default async function decorate(block) {
     }
   });
   const section = block.closest('.section');
-  if (!block.parentElement.previousElementSibling && section.querySelector('h1')) {
+  const h1 = section.querySelector('h1');
+  if (!block.parentElement.previousElementSibling && h1) {
     section.classList.add('hero-section');
+  }
+  if (h1 && h1.closest('.block')) {
+    section.classList.add('hero-section-wide');
   }
 }

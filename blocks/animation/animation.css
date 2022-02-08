@@ -7,6 +7,22 @@ main .hero-section .animation {
     --animation-height: 642px;
 }
 
+main .hero-section-wide .animation {
+    --animation-height: 1200px;
+}
+
+@media (min-width: 600px) {
+    main .hero-section-wide .animation {
+        --animation-height: 1400px;
+    }
+}
+
+@media (min-width: 900px) {
+    main .hero-section-wide .animation {
+        --animation-height: 750px;
+    }
+}
+
 
 main .section > div.animation-wrapper {
     max-width: 100%;
