@@ -9,6 +9,70 @@ footer .footer {
   margin: auto;
 }
 
+footer .footer > div {
+  display: flex;
+  flex-direction: column;
+}
+
 footer .footer p {
   margin: 0;
+}
+
+/* brand */
+
+footer .brand {
+  margin-bottom: 4px;
+}
+
+footer .brand .icon-logo {
+  height: 32px;
+}
+
+footer .brand p {
+  font-size: 11px;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+  line-height: 10px;
+}
+
+footer .brand p:nth-child(2) {
+  padding-left: 20px;
+}
+
+/* social */
+
+footer .social {
+  margin-top: 24px;
+}
+
+.footer .social ul {
+  display: flex;
+  flex-wrap: row;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer .social ul li {
+  cursor: pointer;
+}
+
+.footer .social ul li:not(:last-child) {
+  padding-right: 8px;
+}
+
+.footer .social ul li a {
+  display: flex;
+  flex: 0 0 auto;
+  flex-flow: column nowrap;
+  padding: 8px;
+  border-radius: 50%;
+  background: rgb(var(--link-color));
+}
+
+.footer .social ul li a img {
+  height: 24px;
+  width: 24px;
 }
