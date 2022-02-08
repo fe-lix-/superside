@@ -490,6 +490,39 @@ document.addEventListener('click', () => sampleRUM('click'));
 
 loadPage(document);
 
+export function decorateButtons(block = document) {
+  const noButtonBlocks = [];
+  block.querySelectorAll(':scope a').forEach(($a) => {
+    $a.title = $a.title || $a.textContent;
+    const $block = $a.closest('div.section > div > div');
+    let blockName;
+    if ($block) {
+      blockName = $block.className;
+    }
+    if (!noButtonBlocks.includes(blockName)
+      && $a.href !== $a.textContent) {
+      const $up = $a.parentElement;
+      const $twoup = $a.parentElement.parentElement;
+      if (!$a.querySelector('img')) {
+        if ($up.childNodes.length === 1 && ($up.tagName === 'P' || $up.tagName === 'DIV')) {
+          $a.className = 'button accent'; // default
+          $up.classList.add('button-container');
+        }
+        if ($up.childNodes.length === 1 && $up.tagName === 'STRONG'
+            && $twoup.childNodes.length === 1 && $twoup.tagName === 'P') {
+          $a.className = 'button accent';
+          $twoup.classList.add('button-container');
+        }
+        if ($up.childNodes.length === 1 && $up.tagName === 'EM'
+            && $twoup.childNodes.length === 1 && $twoup.tagName === 'P') {
+          $a.className = 'button accent light';
+          $twoup.classList.add('button-container');
+        }
+      }
+    }
+  });
+}
+
 // eslint-disable-next-line no-unused-vars
 function buildHeroBlock(main) {
   const h1 = main.querySelector('h1');
@@ -537,6 +570,7 @@ function buildAutoBlocks(main) {
 export function decorateMain(main) {
   // forward compatible pictures redecoration
   decoratePictures(main);
+  decorateButtons(main);
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);

@@ -19,7 +19,7 @@ main .hero-section-wide .animation {
 
 @media (min-width: 900px) {
     main .hero-section-wide .animation {
-        --animation-height: 800px;
+        --animation-height: 750px;
     }
 }
 
