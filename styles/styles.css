@@ -296,3 +296,8 @@ main .section.light-logo {
 .guide main {
   text-align: left;
 }
+
+/* temp footer hide */
+footer {
+  display: none;
+}
