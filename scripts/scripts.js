@@ -568,7 +568,10 @@ function buildAutoBlocks(main) {
 
 function addSectionBackgrounds(main) {
   main.querySelectorAll('.section[data-background]').forEach((section) => {
-    section.style.backgroundImage = `url('${section.dataset.background}')`;
+    const picture = createOptimizedPicture(section.dataset.background, 'background image', true);
+    picture.className = 'section-background';
+    section.classList.add('has-background');
+    section.prepend(picture);
   });
 }
 

@@ -273,6 +273,10 @@ main .section[data-section-status='loading'], main .section[data-section-status=
 
 /* section styling */
 
+main .section {
+  position: relative;
+}
+
 main .section.light-logo {
   background-size: cover;
   background: url('/styles/logo-bg.jpg');
@@ -284,6 +288,24 @@ main .section.dark {
   background-size: cover;
   background-position: center center;
   color: white;
+}
+
+main .section.dark.has-background {
+  background-color: unset;
+}
+
+main picture.section-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+main picture.section-background img {
+  height: 100%;
+  width: 100%;
 }
 
 /* theme styles */
