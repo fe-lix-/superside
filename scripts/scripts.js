@@ -170,6 +170,8 @@ export function readBlockConfig($block) {
           } else {
             value = $ps.map(($p) => $p.textContent);
           }
+        } else if ($value.querySelector('img')) {
+          value = $value.querySelector('img').src;
         } else value = $row.children[1].textContent;
         config[name] = value;
       }
@@ -564,6 +566,12 @@ function buildAutoBlocks(main) {
   }
 }
 
+function addSectionBackgrounds(main) {
+  main.querySelectorAll('.section[data-background]').forEach((section) => {
+    section.style.backgroundImage = `url('${section.dataset.background}')`;
+  });
+}
+
 /**
  * Decorates the main element.
  * @param {Element} main The main element
@@ -575,6 +583,7 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
+  addSectionBackgrounds(main);
 }
 
 /**
