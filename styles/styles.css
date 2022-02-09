@@ -16,6 +16,7 @@
   --dark-link-color: 42, 116, 62;
   --background-color: 255,255,255;
   --dark-background-color: #1D1547;
+  --light-background-color: #E2FFE9;
   --text-color: 0,0,0;
   --font-family-heading: "Futura",Futura,Trebuchet MS,Arial,sans-serif;
   --font-family-body: "Nunito Sans", "Nunito Sans", Arial, sans-serif;
@@ -304,6 +305,7 @@ main picture.section-background {
 }
 
 main picture.section-background img {
+  object-fit: cover;
   height: 100%;
   width: 100%;
 }

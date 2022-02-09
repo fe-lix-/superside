@@ -49,7 +49,7 @@ main .quotes-picture {
 main .quotes-quote:before {
   content: '';
   position: absolute;
-  background: url(/styles/opening-quotes.svg) top no-repeat;
+  background: url(./opening-quotes.svg) top no-repeat;
   background-size: cover;
   z-index: -1;
   width: 69px;
@@ -65,9 +65,9 @@ main .quotes-quote:after {
   right: 10px;
   content: '';
   position: absolute;
-  background: url(/styles/closing-quotes.svg) top no-repeat;
+  background: url(./closing-quotes.svg) top no-repeat;
   background-size: cover;
-  z-index: -1;
+  z-index: 0;
 }
 
 main .quotes-source {
@@ -99,6 +99,30 @@ main .quotes .quotes-buttons {
   margin: auto;
   display: flex;
   justify-content: center;
+}
+
+main .quotes-wrapper.highlight {
+  background-color: #60FD8130;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  z-index: -2;
+}
+
+main .quotes-wrapper.highlight::before {
+  background-image: url('./highlight-border.svg');
+  content: '';
+  display: block;
+  background-color: white;
+  background-position: center center;
+  background-size: cover;
+  height: 100px;
+}
+
+main .quotes-wrapper.highlight .quotes {
+  max-width: 900px;  
+  margin: auto;
+  padding: 2rem;
 }
 
 

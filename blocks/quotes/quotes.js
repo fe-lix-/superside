@@ -20,4 +20,5 @@ export default function decorate(block) {
   });
   block.append(carousel);
   block.append(navButtons);
+  if (block.classList.contains('highlight')) block.parentNode.classList.add('highlight');
 }
