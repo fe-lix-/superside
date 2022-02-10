@@ -81,6 +81,7 @@ a:any-link {
   color: rgb(var(--link-color));
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: underline;
 }
@@ -101,7 +102,6 @@ main button {
   background-color: rgba(var(--link-color));
   font-weight: 800;
   font-family: var(--font-family-heading);
-
 }
 
 main button:hover {
@@ -141,13 +141,13 @@ font-family:
 }
 
 code, samp {
-font-size: 87.5%;
-padding: .125em;
+  font-size: 87.5%;
+  padding: .125em;
 }
 
 pre {
-font-size: 75%;
-overflow: scroll;
+  font-size: 75%;
+  overflow: scroll;
 }
 
 main blockquote {
@@ -179,6 +179,9 @@ main img {
   height: auto;
 }
 
+main iframe {
+  border: 0;
+}
 
 /* buttons */
 
