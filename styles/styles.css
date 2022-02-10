@@ -110,14 +110,14 @@ main button:hover {
   color: rgb(var(--background-color));
 }
 
-main input {
+main input, main select {
   border: 1px solid rgba(var(--text-color),0.5);
   color: rgb(var(--text-color));
   background-color: rgba(var(--background-color), 0.5);
   font-family: var(--font-family-body);
 }
 
-main input:hover {
+main input:hover, main select:hover {
   border: 1px solid rgba(var(--text-color),0.9);
 }
 
@@ -277,13 +277,16 @@ main .section[data-section-status='loading'], main .section[data-section-status=
 
 /* section styling */
 
+main .section {
+  position: relative;
+}
+
 main .section.light-logo {
   background-size: cover;
   background: url('/styles/logo-bg.jpg');
 }
 
 main .section.dark {
-  position: relative;
   padding: 64px 0;
   background-color: var(--dark-background-color);
   background-size: cover;
@@ -292,7 +295,6 @@ main .section.dark {
 }
 
 main .section.dark.has-background {
-  margin-top: -108px;
   background-color: unset;
 }
 
@@ -329,4 +331,9 @@ main picture.section-background img {
 
 .guide main {
   text-align: left;
+}
+
+/* temp footer hide */
+footer {
+  display: none;
 }
