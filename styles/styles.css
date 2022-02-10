@@ -280,6 +280,7 @@ main .section.light-logo {
 }
 
 main .section.dark {
+  position: relative;
   padding: 64px 0;
   background-color: var(--dark-background-color);
   background-size: cover;
@@ -288,6 +289,7 @@ main .section.dark {
 }
 
 main .section.dark.has-background {
+  margin-top: -108px;
   background-color: unset;
 }
 
