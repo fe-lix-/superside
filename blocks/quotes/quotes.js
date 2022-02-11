@@ -12,7 +12,7 @@ export default function decorate(block) {
     const button = document.createElement('div');
     if (!i) button.classList.add('selected');
     button.addEventListener('click', () => {
-      carousel.scrollTo({ top: 0, left: row.offsetLeft, behavior: 'smooth' });
+      carousel.scrollTo({ top: 0, left: row.offsetLeft - row.parentNode.offsetLeft, behavior: 'smooth' });
       [...navButtons.children].forEach((r) => r.classList.remove('selected'));
       button.classList.add('selected');
     });
