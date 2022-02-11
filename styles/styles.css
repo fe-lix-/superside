@@ -288,6 +288,8 @@ main .section.dark {
   background-size: cover;
   background-position: center center;
   color: white;
+  position: relative;
+  margin-top: -108px;
 }
 
 main .section.dark.has-background {
