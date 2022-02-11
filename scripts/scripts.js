@@ -587,6 +587,8 @@ export function decorateMain(main) {
   decorateSections(main);
   decorateBlocks(main);
   addSectionBackgrounds(main);
+  // check if first section is dark
+  if (document.querySelector('main .section').classList.contains('dark')) document.querySelector('header').classList.add('dark');
 }
 
 /**

@@ -201,3 +201,8 @@ header .nav .nav-brand p:nth-child(2) {
   }    
 }
 
+/* dark header styling */
+
+header.dark {
+  color: white;
+}
