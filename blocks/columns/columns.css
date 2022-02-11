@@ -31,13 +31,15 @@ main .columns p {
     font-size: 16px;
 }
 
-main .columns .form-container input {
+main .columns .form-container input,
+main .columns .form-container select {
     border: 1px solid rgb(193,193,195);
     padding: 11px;
     border-radius: 0;
 }
 
-main .columns .form-container input:hover {
+main .columns .form-container input:hover,
+main .columns .form-container select:hover {
     border-color: rgb(90,92,96);
 }
 
