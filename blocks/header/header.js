@@ -65,9 +65,11 @@ export default async function decorate(block) {
   nav.prepend(hamburger);
   nav.setAttribute('aria-expanded', 'false');
 
-  nav.querySelectorAll('img.icon').forEach((img) => {
-    img.src = img.src.replace('.svg', '-white.svg');
-  });
+  if (document.querySelector('header').classList.contains('dark')) {
+    nav.querySelectorAll('img.icon').forEach((img) => {
+      img.src = img.src.replace('.svg', '-white.svg');
+    });
+  }
 
   block.append(nav);
 }
