@@ -289,11 +289,11 @@ main .section.dark {
   background-position: center center;
   color: white;
   position: relative;
-  margin-top: -108px;
 }
 
 main .section.dark.has-background {
   background-color: unset;
+  margin-top: -108px;
 }
 
 main picture.section-background {
