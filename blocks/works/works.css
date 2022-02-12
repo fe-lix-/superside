@@ -14,8 +14,12 @@ main .works  {
     left: 50%;
     transform: translate(-50%, 0);
     box-sizing: border-box;
-    padding-right: calc(var(--works-item-width) + 32px);
   }
+
+main .works.works-even:after {
+  content: '';
+  width: calc(var(--works-item-width) + 32px);
+}
   
 main .works > div {
     width: var(--works-item-width);
@@ -96,18 +100,18 @@ main .works.works-toright {
 
 @keyframes toleft {
   0% {
-    transform: translate(calc(-50% - 350px), 0);
+    padding-right: 750px;
   }
   99% {
-    transform: translate(-50%, 0);
+    padding-right: 0;
   }
 }
 
 @keyframes toright {
   0% {
-    transform: translate(calc(-50% + 350px), 0);
+    padding-left: 750px;
   }
   99% {
-    transform: translate(-50%, 0);
+    padding-left: 0;
   }
 }
