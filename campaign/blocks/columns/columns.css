@@ -66,12 +66,12 @@ main .columns .form-container .form-checkbox-wrapper input[type='checkbox'] + la
     height: 30px;
     width: 30px;
     content: ' ';
-    background: url('/styles/checkbox.svg');
+    background: url('./checkbox.svg');
     background-size: contain;
 }
 
 main .columns .form-container .form-checkbox-wrapper input[type='checkbox']:checked +label:before {
-    background: url('/styles/checkbox-checked.svg');
+    background: url('./checkbox-checked.svg');
     background-size: contain;
     content: ' ';
 }
