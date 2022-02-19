@@ -1,4 +1,4 @@
-import { readBlockConfig } from '../../scripts/scripts.js';
+import { decorateIcons, readBlockConfig } from '../../scripts/scripts.js';
 
 /**
  * collapses all open nav sections
@@ -21,7 +21,7 @@ export default async function decorate(block) {
   block.textContent = '';
 
   // fetch nav content
-  const navPath = cfg.nav || '/nav';
+  const navPath = cfg.nav || `${window.hlx.codeBasePath}/nav`;
   const resp = await fetch(`${navPath}.plain.html`);
   const html = await resp.text();
 
@@ -32,6 +32,7 @@ export default async function decorate(block) {
   const navSections = document.createElement('div');
   navSections.classList.add('nav-sections');
   nav.innerHTML = html;
+  decorateIcons(nav);
   nav.querySelectorAll(':scope > div').forEach((navSection, i) => {
     if (!i) {
       // first section is the brand section

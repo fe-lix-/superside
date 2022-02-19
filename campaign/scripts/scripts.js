@@ -493,6 +493,13 @@ document.addEventListener('click', () => sampleRUM('click'));
 
 loadPage(document);
 
+export function decorateIcons(main) {
+  main.querySelectorAll('.icon').forEach((img) => {
+    const { pathname } = new URL(img.src);
+    img.src = `${window.hlx.codeBasePath}${pathname}`;
+  });
+}
+
 export function decorateButtons(block = document) {
   const noButtonBlocks = [];
   block.querySelectorAll(':scope a').forEach(($a) => {
@@ -583,6 +590,7 @@ export function decorateMain(main) {
   // forward compatible pictures redecoration
   decoratePictures(main);
   decorateButtons(main);
+  decorateIcons(main);
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);

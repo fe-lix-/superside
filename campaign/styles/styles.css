@@ -279,7 +279,7 @@ main .section[data-section-status='loading'], main .section[data-section-status=
 
 main .section.light-logo {
   background-size: cover;
-  background: url('/styles/logo-bg.jpg');
+  background: url('./logo-bg.jpg');
 }
 
 main .section.dark {
