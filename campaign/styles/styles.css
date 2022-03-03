@@ -110,6 +110,13 @@ main button:hover {
   color: rgb(var(--background-color));
 }
 
+main button:disabled {
+  background-color: #eee;
+  cursor: pointer;
+  color: #888;
+}
+
+
 main input, main select {
   border: 1px solid rgba(var(--text-color),0.5);
   color: rgb(var(--text-color));

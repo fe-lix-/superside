@@ -17,9 +17,42 @@ function createSelect(fd) {
   return select;
 }
 
+async function submitForm(form) {
+  const payload = {};
+  [...form.elements].forEach((fe) => {
+    if (fe.type === 'checkbox') {
+      if (fe.checked) payload[fe.id] = fe.value;
+    } else if (fe.id) {
+      payload[fe.id] = fe.value;
+    }
+  });
+  const resp = await fetch(form.dataset.action, {
+    method: 'POST',
+    cache: 'no-cache',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ data: payload }),
+  });
+  const json = await resp.json();
+  console.log(json);
+}
+
 function createButton(fd) {
   const button = document.createElement('button');
   button.textContent = fd.Label;
+  if (fd.Field === 'submit') {
+    button.addEventListener('click', (event) => {
+      event.preventDefault();
+      button.setAttribute('disabled', '');
+      submitForm(button.closest('form'));
+      if (fd.Extra.includes('calendly')) {
+        /*
+        https://www.superside.com/calendly?calendlyEventType=superside-customer-development&calendlyEventName=call&eventType=call&full_name=Buzz%20Lightyear&email=test@test.com&a1=+4111111111&a2=Please%20Ignore&companySize=51-200&a4=51-200
+        */
+      }
+    }, {once : true});
+  }
   return button;
 }
 
@@ -43,6 +76,7 @@ async function createForm(formURL) {
   const resp = await fetch(pathname);
   const json = await resp.json();
   const form = document.createElement('form');
+  [form.dataset.action] = pathname.split('.json');
   json.data.forEach((fd) => {
     fd.Type = fd.Type || 'text';
     const fieldWrapper = document.createElement('div');
