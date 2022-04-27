@@ -5,7 +5,7 @@ main .quotes .quotes-carousel {
   scroll-behavior: auto;
 }
 
-main .quotes .quotes-carousel > div {
+main .quotes .quotes-carousel>div {
   box-sizing: border-box;
   width: 100%;
   flex-shrink: 0;
@@ -17,11 +17,11 @@ main .quotes .quotes-carousel::-webkit-scrollbar {
   display: none;
 }
 
-main .quotes .quotes-carousel > div {
+main .quotes .quotes-carousel>div {
   padding: 64px 0 0 32px;
   margin: 0 32px;
   display: grid;
-  grid-template-areas: 'quote' 'source' 'picture';
+  grid-template-areas: 'quote''source''picture';
   align-items: top;
 }
 
@@ -73,6 +73,7 @@ main .quotes-quote:after {
 main .quotes-source {
   grid-area: source;
 }
+
 main .quotes-source p {
   font-size: 16px;
   font-family: var(--font-family-heading);
@@ -83,7 +84,7 @@ main .quotes-source p:first-child {
   font-size: 12px;
 }
 
-main .quotes-buttons > div {
+main .quotes-buttons>div {
   width: 16px;
   height: 16px;
   background-color: grey;
@@ -91,7 +92,7 @@ main .quotes-buttons > div {
   margin: 12px;
 }
 
-main .quotes-buttons > div.selected {
+main .quotes-buttons>div.selected {
   background-color: rgb(var(--link-color));
 }
 
@@ -102,41 +103,40 @@ main .quotes .quotes-buttons {
 }
 
 main .quotes-wrapper.highlight {
-  background-color: #60FD8130;
   max-width: 100%;
   margin: 0;
   padding: 0;
   z-index: -2;
 }
 
-main .quotes-wrapper.highlight::before {
-  background-image: url('./highlight-border.svg');
-  content: '';
-  display: block;
-  background-color: white;
-  background-position: center center;
-  background-size: cover;
-  height: 100px;
-}
+
 
 main .quotes-wrapper.highlight .quotes {
-  max-width: 900px;  
+  max-width: 900px;
   margin: auto;
   padding: 2rem;
 }
 
+main .quotes-highlight-container .columns-wrapper {
+  background-color: white;
+  color: rgba(var(--light-background-text-color));
+
+}
+
+
 
 @media (min-width: 600px) {
-  main .quotes .quotes-carousel > div {
-    grid-template-areas: 'quote picture' 'source picture';
+  main .quotes .quotes-carousel>div {
+    grid-template-areas: 'quote picture''source picture';
   }
+
   main .quotes-picture {
     padding-left: 32px;
   }
 }
 
 
-@media (min-width:900px) {
+@media (min-width:1024px) {
   main .quotes-quote:before {
     width: 137px;
     height: 76px;
@@ -151,4 +151,3 @@ main .quotes-wrapper.highlight .quotes {
     right: 20px;
   }
 }
-

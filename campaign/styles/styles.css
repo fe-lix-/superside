@@ -16,9 +16,10 @@
   --column-button-color: 15, 33, 51;
   --dark-link-color: 42, 116, 62;
   --background-color: 255, 255, 255;
-  --dark-background-color: #1D1547;
+  --dark-background-color: 11, 25, 38;
   --light-background-color: #E2FFE9;
-  --text-color: 0, 0, 0;
+  --text-color: 250, 250, 250;
+  --light-background-text-color: 0, 0, 0;
   --font-family-heading: Raleway, Arial, sans-serif;
   --font-family-body: Raleway, Arial, sans-serif;
 }
@@ -38,6 +39,7 @@ body {
   background-color: rgba(var(--background-color), .92);
   opacity: 0;
   font-feature-settings: "lnum";
+  background-color: rgb(11, 25, 38);
 }
 
 body.appear {
@@ -133,7 +135,6 @@ main button {
   border: solid 2px rgba(var(--link-color));
   border-radius: 4px;
   box-sizing: border-box;
-  color: rgb(var(--text-color));
   display: inline-block;
   font-family: var(--font-family-heading);
   font-size: 14px;
@@ -397,10 +398,10 @@ main .section.light-logo {
 
 main .section.dark {
   padding: 64px 0;
-  background-color: var(--dark-background-color);
+  background-color: rgba(var(--dark-background-color));
   background-size: cover;
   background-position: center center;
-  color: white;
+  color: rgba(var(--text-color));
   position: relative;
 }
 
