@@ -2,12 +2,25 @@ main .section>div.columns-wrapper {
     max-width: 1400px;
 }
 
+main .columns h1 {
+    margin: 0;
+}
+
+main .columns h2 {
+    margin-top: 40px;
+}
+
+main .columns h3 {
+    margin-bottom: 0;
+}
+
 main .columns>div {
     display: flex;
     flex-direction: column;
     padding: 24px 0;
     align-items: center;
     justify-content: space-between;
+    padding-top: 88px;
 }
 
 main .columns>div:nth-child(even) {
@@ -15,10 +28,39 @@ main .columns>div:nth-child(even) {
     flex-direction: column-reverse;
 }
 
+main .columns a.button:any-link {
+    border: 2px solid rgb(var(--column-button-color));
+    padding: 17px 25px;
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    background-color: rgb(var(--column-button-color));
+    padding: 15px 40px;
+}
+
+main .columns a.button:hover,
+a.button:focus {
+    background-color: white;
+    color: rgb(var(--column-button-color));
+}
+
+main .columns>div:nth-child(even) a.button:any-link {
+
+    background-color: white;
+    color: rgb(var(--column-button-color));
+}
+
+main .columns>div:nth-child(even) a.button:hover,
+a.button:focus {
+    background-color: rgb(var(--column-button-color));
+    color: white;
+}
+
+
 main .columns .form-container {
     padding: 32px;
-    max-width: 456px;
     box-shadow: 0px 1px 6px rgb(34 34 34 / 10%);
+    flex-basis: 100%;
 }
 
 main .columns .form-container h3 {
@@ -96,20 +138,22 @@ main .columns .embed-wistia {
 }
 
 @media (min-width: 600px) {
-    main .columns .form-container {
-        width: 304px;
-    }
-}
-
-@media (min-width: 1024px) {
 
     main .columns>div,
     main .columns>div:nth-child(even) {
         flex-direction: unset;
     }
 
+    main .columns .form-container {
+        flex-basis: 390px;
+        flex-shrink: 0;
+        flex-grow: 0;
+    }
+}
+
+@media (min-width: 1024px) {
     main .columns>div>div {
-        width: 50%;
+        width: 100%;
     }
 
     main .columns>div>div:first-child {
@@ -118,10 +162,6 @@ main .columns .embed-wistia {
 
     main .columns>div>div:last-child {
         margin-left: 16px;
-    }
-
-    main .columns .form-container {
-        width: 384px;
     }
 
     main .columns .form-container .form-short {
