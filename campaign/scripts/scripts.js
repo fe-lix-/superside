@@ -409,6 +409,16 @@ export function decoratePictures(main) {
 }
 
 /**
+ * set Template and Theme.
+ */
+function decorateTemplateAndTheme() {
+  const template = getMetadata('template');
+  if (template) document.body.classList.add(template);
+  const theme = getMetadata('theme');
+  if (theme) document.body.classList.add(theme);
+}
+
+/**
  * Adds the favicon.
  * @param {string} href The favicon URL
  */
@@ -605,8 +615,7 @@ export function decorateMain(main) {
 async function loadEager(doc) {
   const main = doc.querySelector('main');
 
-  const theme = getMetadata('theme');
-  if (theme) document.body.classList.add(toClassName(theme));
+  decorateTemplateAndTheme();
 
   if (main) {
     decorateMain(main);
