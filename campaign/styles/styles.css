@@ -51,7 +51,6 @@ header {
 }
 
 main {
-  font-size: 1.6rem;
   min-height: calc(100vh - 156px);
   text-align: center;
 }
@@ -130,11 +129,13 @@ main select {
   padding: 0.75rem 0.6rem;
 }
 
-main button {
+main button,
+footer .cta a {
   background-color: rgba(var(--link-color));
   border: solid 2px rgba(var(--link-color));
   border-radius: 4px;
   box-sizing: border-box;
+  color: rgb(var(--light-background-text-color));
   display: inline-block;
   font-family: var(--font-family-heading);
   font-size: 14px;
@@ -314,7 +315,6 @@ main .section>div {
   }
 
   main>.section>div {
-    max-width: 30em;
     margin: auto;
   }
 
