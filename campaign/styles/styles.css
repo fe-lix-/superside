@@ -10,16 +10,16 @@
  * governing permissions and limitations under the License.
  */
 
- :root {
-  --link-color: 92 ,255, 133;
-  --button-color: 92 ,255, 133;
+:root {
+  --link-color: 92, 255, 133;
+  --button-color: 92, 255, 133;
   --dark-link-color: 42, 116, 62;
-  --background-color: 255,255,255;
+  --background-color: 255, 255, 255;
   --dark-background-color: #1D1547;
   --light-background-color: #E2FFE9;
-  --text-color: 0,0,0;
-  --font-family-heading: "Futura",Futura,Trebuchet MS,Arial,sans-serif;
-  --font-family-body: "Nunito Sans", "Nunito Sans", Arial, sans-serif;
+  --text-color: 0, 0, 0;
+  --font-family-heading: Raleway, Arial, sans-serif;
+  --font-family-body: Raleway, Arial, sans-serif;
 }
 
 html {
@@ -33,9 +33,10 @@ body {
   font-family: var(--font-family-body);
   line-height: 1.6;
   margin: 0;
-  color: rgba(var(--text-color),.9);
-  background-color: rgba(var(--background-color),.92);
+  color: rgba(var(--text-color), .9);
+  background-color: rgba(var(--background-color), .92);
   opacity: 0;
+  letter-spacing: 0.5%;
 }
 
 body.appear {
@@ -56,23 +57,51 @@ main .block {
   text-align: left;
 }
 
-h1, h2, h3,
-h4, h5, h6 {
-  font-weight: 600;
-  line-height: 1.25;
-  margin-top: 1em;
-  margin-bottom: .5em;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-family-heading);
+  font-weight: bold;
+  line-height: 1.4;
 }
 
-h1 { font-size: 3.25rem; }
-h2 { font-size: 2.5rem; }
-h3 { font-size: 2rem; }
-h4 { font-size: 2rem; }
-h5 { font-size: 1rem; }
-h6 { font-size: .875rem; }
+h1 {
+  font-size: 34px;
+}
 
-p, dl, ol, ul, pre, blockquote {
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 26px;
+}
+
+h4 {
+  font-size: 23px;
+}
+
+h5 {
+  font-size: 20px;
+}
+
+h6 {
+  font-size: 18px;
+}
+
+h7 {
+  font-size: 16px;
+}
+
+p,
+dl,
+ol,
+ul,
+pre,
+blockquote {
   margin-top: 1em;
   margin-bottom: 1em;
 }
@@ -86,14 +115,16 @@ a:hover {
   text-decoration: underline;
 }
 
-main input, main button, main select {
+main input,
+main button,
+main select {
   box-sizing: border-box;
   font-size: 1.25rem;
   width: 100%;
   max-width: 50rem;
   display: block;
   margin-bottom: 1rem;
-  padding: 0.75rem 0.6rem;    
+  padding: 0.75rem 0.6rem;
 }
 
 main button {
@@ -117,19 +148,22 @@ main button:disabled {
 }
 
 
-main input, main select {
-  border: 1px solid rgba(var(--text-color),0.5);
+main input,
+main select {
+  border: 1px solid rgba(var(--text-color), 0.5);
   color: rgb(var(--text-color));
   background-color: rgba(var(--background-color), 0.5);
   font-family: var(--font-family-body);
 }
 
-main input:hover, main select:hover {
-  border: 1px solid rgba(var(--text-color),0.9);
+main input:hover,
+main select:hover {
+  border: 1px solid rgba(var(--text-color), 0.9);
 }
 
 main pre {
-  background-color: rgb(var(--text-color),0.05);;
+  background-color: rgb(var(--text-color), 0.05);
+  ;
   padding: 1em;
   border-radius: .25em;
   overflow-x: auto;
@@ -139,15 +173,16 @@ main pre {
 code,
 pre,
 samp {
-font-family:
-  'Roboto Mono',
-  Menlo,
-  Consolas,
-  'Liberation Mono',
-  monospace;
+  font-family:
+    'Roboto Mono',
+    Menlo,
+    Consolas,
+    'Liberation Mono',
+    monospace;
 }
 
-code, samp {
+code,
+samp {
   font-size: 87.5%;
   padding: .125em;
 }
@@ -178,7 +213,7 @@ hr {
   margin-top: 1.5em;
   margin-bottom: 1.5em;
   border: 0;
-  border-bottom: 1px solid rgba(var(--text-color),0.2);
+  border-bottom: 1px solid rgba(var(--text-color), 0.2);
 }
 
 main img {
@@ -200,7 +235,7 @@ main a.button:any-link {
   text-align: center;
   font-size: 18px;
   font-family: var(--font-family-heading);
-  font-style: normal; 
+  font-style: normal;
   font-weight: 600;
   cursor: pointer;
   color: black;
@@ -212,13 +247,14 @@ main a.button:any-link {
   display: inline-block;
 }
 
-main a.button:hover, a.button:focus {
+main a.button:hover,
+a.button:focus {
   background-color: rgb(var(--dark-link-color));
   color: white;
 }
 
 
-main .section > div {
+main .section>div {
   padding: 0 2rem;
 }
 
@@ -230,16 +266,73 @@ main .section > div {
   main {
     min-height: calc(100vh - 190px);
   }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 34px;
+  }
+
+  h3 {
+    font-size: 30px;
+  }
+
+  h4 {
+    font-size: 26px;
+  }
+
+  h5 {
+    font-size: 23px;
+  }
+
+  h6 {
+    font-size: 19px;
+  }
+
+  h7 {
+    font-size: 16px;
+  }
 }
-@media (min-width: 900px) {
+
+@media (min-width: 1024px) {
   main {
     min-height: calc(100vh - 212px);
   }
 
-  main > .section > div {
-      max-width: 30em;
-      margin: auto;
-  }    
+  main>.section>div {
+    max-width: 30em;
+    margin: auto;
+  }
+
+  h1 {
+    font-size: 48px;
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+
+  h3 {
+    font-size: 33px;
+  }
+
+  h4 {
+    font-size: 28px;
+  }
+
+  h5 {
+    font-size: 23px;
+  }
+
+  h6 {
+    font-size: 19px;
+  }
+
+  h7 {
+    font-size: 17px;
+  }
 }
 
 /* section specific formatting */
@@ -261,6 +354,7 @@ main .hero-section h1 {
 main .hero-section p {
   font-size: 16px;
 }
+
 @media (min-width: 900px) {
   main .hero-section-wide {
     max-width: 1200px;
@@ -268,9 +362,9 @@ main .hero-section p {
 }
 
 @media (min-width: 1200px) {
-  
+
   main .hero-section {
-      margin-left: calc((100vw - 1200px + 32px) / 2);
+    margin-left: calc((100vw - 1200px + 32px) / 2);
   }
 }
 
@@ -278,9 +372,10 @@ main .hero-section p {
 
 /* above the fold CSS goes here to squash CLS */
 
-main .section[data-section-status='loading'], main .section[data-section-status='initialized'] {
-    display: none;
-  }
+main .section[data-section-status='loading'],
+main .section[data-section-status='initialized'] {
+  display: none;
+}
 
 /* section styling */
 
@@ -323,15 +418,16 @@ main picture.section-background img {
 .guide main h4 {
   position: relative;
 }
+
 .guide main h4:before {
-    content: '';
-    display: block;
-    width: 4px;
-    height: 100%;
-    background: #5989f3;
-    position: absolute;
-    left: -32px;
-    bottom: 0;
+  content: '';
+  display: block;
+  width: 4px;
+  height: 100%;
+  background: #5989f3;
+  position: absolute;
+  left: -32px;
+  bottom: 0;
 }
 
 .guide main {
