@@ -15,6 +15,7 @@ footer {
   padding: var(--pad-xl);
   padding-bottom: 0;
   color: rgb(var(--footer-color));
+  margin-bottom: 56px;
 }
 
 footer .footer {
@@ -83,26 +84,25 @@ footer .social ul {
   display: flex;
   flex-wrap: row;
   justify-content: center;
+  column-gap: 8px;
 }
 
 footer .social ul li {
   cursor: pointer;
 }
 
-footer .social ul li:not(:last-child) {
-  padding-right: var(--pad-s);
-}
-
 footer .social ul li a {
   display: flex;
   flex: 0 0 auto;
   flex-flow: column nowrap;
-  padding: var(--pad-s);
 }
 
 footer .social ul li a img {
   height: var(--pad-l);
   width: var(--pad-l);
+  border-radius: 50%;
+  background-color: rgb(var(--footer-icon-background));
+  padding: 8px;
 }
 
 @media (min-width: 576px) {
@@ -137,7 +137,7 @@ footer .social ul li a img {
 /* links */
 
 footer .links {
-  padding: var(--pad-m) 0;
+  padding: var(--pad-l) 0;
   text-align: center;
 }
 
@@ -162,6 +162,7 @@ footer .links ul li:not(:first-child):not(:last-child) {
 
 footer .links ul li a {
   color: rgb(var(--footer-link-color));
+  line-height: 21px;
 }
 
 footer .links ul li a:hover,
