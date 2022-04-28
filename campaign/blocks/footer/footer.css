@@ -1,7 +1,6 @@
 :root {
   --footer-color: 250, 250, 250;
   --footer-link-color: 250, 250, 250;
-  --footer-icon-background: 15, 33, 51;
   --pad-xxl: 48px;
   --pad-xl: 32px;
   --pad-l: 24px;
@@ -101,7 +100,7 @@ footer .social ul li a img {
   height: var(--pad-l);
   width: var(--pad-l);
   border-radius: 50%;
-  background-color: rgb(var(--footer-icon-background));
+  background-color: rgb(var(--social-icon-background));
   padding: 8px;
 }
 
