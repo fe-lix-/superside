@@ -109,20 +109,11 @@ main .quotes-wrapper.highlight {
   z-index: -2;
 }
 
-
-
 main .quotes-wrapper.highlight .quotes {
   max-width: 900px;
   margin: auto;
   padding: 2rem;
 }
-
-main .quotes-highlight-container .columns-wrapper {
-  background-color: white;
-  color: rgba(var(--light-background-text-color));
-
-}
-
 
 
 @media (min-width: 600px) {

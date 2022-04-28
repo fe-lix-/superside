@@ -13,7 +13,6 @@
 :root {
   --link-color: 92, 255, 133;
   --button-color: 92, 255, 133;
-  --column-button-color: 15, 33, 51;
   --dark-link-color: 42, 116, 62;
   --background-color: 255, 255, 255;
   --dark-background-color: 11, 25, 38;
@@ -133,38 +132,6 @@ main select {
   padding: 0.75rem 0.6rem;
 }
 
-main button,
-footer .cta a {
-  background-color: rgba(var(--link-color));
-  border: solid 2px rgba(var(--link-color));
-  border-radius: 4px;
-  box-sizing: border-box;
-  color: rgb(var(--light-background-text-color));
-  display: inline-block;
-  font-family: var(--font-family-heading);
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.2px;
-  line-height: 21px;
-  padding: 15px 40px;
-  transition-duration: 0.1s;
-  transition-property: color, background-color, border-color, box-shadow, -webkit-box-shadow;
-  transition-timing-function: ease-in-out;
-}
-
-main button:hover {
-  background-color: rgba(0, 0, 0, 0);
-  cursor: pointer;
-  color: rgba(var(--link-color));
-}
-
-main button:disabled {
-  background-color: #eee;
-  cursor: pointer;
-  color: #888;
-}
-
-
 main input,
 main select {
   border: 1px solid rgba(var(--text-color), 0.5);
@@ -180,7 +147,6 @@ main select:hover {
 
 main pre {
   background-color: rgb(var(--text-color), 0.05);
-  ;
   padding: 1em;
   border-radius: .25em;
   overflow-x: auto;
@@ -243,33 +209,40 @@ main iframe {
 }
 
 /* buttons */
-
-main a.button:any-link {
-  text-decoration: none;
-  border: 2px solid transparent;
-  padding: 17px 25px;
-  /* outline: none; (keep outline for a11n) */
-  text-align: center;
-  font-size: 18px;
-  font-family: var(--font-family-heading);
-  font-style: normal;
-  font-weight: 600;
-  cursor: pointer;
-  color: black;
-  background-color: rgb(var(--button-color));
-  margin: 16px 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+main button,
+main a.button:any-link,
+footer .cta a {
+  background-color: rgba(var(--link-color));
+  border: solid 2px rgba(var(--link-color));
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: rgb(var(--light-background-text-color));
   display: inline-block;
+  font-family: var(--font-family-heading);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  line-height: 21px;
+  padding: 15px 40px;
+  text-decoration: none;
+  transition-duration: 0.1s;
+  transition-property: color, background-color, border-color, box-shadow, -webkit-box-shadow;
+  transition-timing-function: ease-in-out;
 }
 
+main button:hover,
 main a.button:hover,
 a.button:focus {
-  background-color: rgb(var(--dark-link-color));
-  color: white;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  color: rgba(var(--link-color));
 }
 
+main button:disabled {
+  background-color: #eee;
+  cursor: pointer;
+  color: #888;
+}
 
 main .section>div {
   padding: 0 2rem;

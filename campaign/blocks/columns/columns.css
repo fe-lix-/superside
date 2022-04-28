@@ -28,35 +28,6 @@ main .columns>div:nth-child(even) {
     flex-direction: column-reverse;
 }
 
-main .columns a.button:any-link {
-    border: 2px solid rgb(var(--column-button-color));
-    padding: 17px 25px;
-    font-size: 14px;
-    font-weight: 700;
-    color: white;
-    background-color: rgb(var(--column-button-color));
-    padding: 15px 40px;
-}
-
-main .columns a.button:hover,
-a.button:focus {
-    background-color: white;
-    color: rgb(var(--column-button-color));
-}
-
-main .columns>div:nth-child(even) a.button:any-link {
-
-    background-color: white;
-    color: rgb(var(--column-button-color));
-}
-
-main .columns>div:nth-child(even) a.button:hover,
-a.button:focus {
-    background-color: rgb(var(--column-button-color));
-    color: white;
-}
-
-
 main .columns .form-container {
     padding: 32px;
     box-shadow: 0px 1px 6px rgb(34 34 34 / 10%);
