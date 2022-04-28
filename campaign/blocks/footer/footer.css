@@ -131,8 +131,6 @@ footer .social ul li a {
   flex: 0 0 auto;
   flex-flow: column nowrap;
   padding: var(--pad-s);
-  border-radius: 50%;
-  background: rgb(var(--button-color));
 }
 
 footer .social ul li a img {
