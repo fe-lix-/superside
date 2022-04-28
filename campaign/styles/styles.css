@@ -22,6 +22,7 @@
   --light-background-text-color: 0, 0, 0;
   --font-family-heading: Raleway, Arial, sans-serif;
   --font-family-body: Raleway, Arial, sans-serif;
+  --max-width: 1400px;
 }
 
 html {
@@ -53,11 +54,12 @@ body.appear {
 header {
   height: 108px;
   margin: auto;
-  max-width: 1400px;
-
+  max-width: var(--max-width);
 }
 
 main {
+  margin: auto;
+  max-width: var(--max-width);
   min-height: calc(100vh - 156px);
   text-align: center;
 }
@@ -350,14 +352,14 @@ main .hero-section p {
 
 @media (min-width: 900px) {
   main .hero-section-wide {
-    max-width: 1200px;
+    max-width: var(--max-width);
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: var(--max-width)) {
 
   main .hero-section {
-    margin-left: calc((100vw - 1200px + 32px) / 2);
+    margin-left: calc((100vw - var(--max-width) + 32px) / 2);
   }
 }
 

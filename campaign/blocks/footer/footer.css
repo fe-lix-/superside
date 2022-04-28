@@ -18,7 +18,7 @@ footer {
 }
 
 footer .footer {
-  max-width: 1200px;
+  max-width: calc(var(--max-width) - 4rem);
   margin: auto;
 }
 

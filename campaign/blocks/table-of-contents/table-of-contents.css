@@ -1,11 +1,11 @@
-main .table-of-contents-container > div {
-    max-width: 1200px;
+main .table-of-contents-container>div {
+    max-width: var(--max-width);
     box-sizing: border-box;
     padding: 0 3rem;
 }
 
 main .table-of-contents {
-    margin: 32px 0;   
+    margin: 32px 0;
 }
 
 main .table-of-contents-sticky {
@@ -61,6 +61,7 @@ main .table-of-contents h3 {
     main .table-of-contents .table-of-contents-eyebrow {
         font-size: 18px;
     }
+
     main .table-of-contents .table-of-contents-teaser {
         display: block;
         font-size: 16px;
@@ -78,7 +79,7 @@ main .table-of-contents h3 {
     main .table-of-contents-sticky {
         display: block;
     }
-        
+
     main .table-of-contents-sticky.hidden {
         display: none;
     }
@@ -134,5 +135,5 @@ main .table-of-contents h3 {
         display: block;
         color: #333;
     }
-    
+
 }
