@@ -52,6 +52,9 @@ body.appear {
 
 header {
   height: 108px;
+  margin: auto;
+  max-width: 1400px;
+
 }
 
 main {
