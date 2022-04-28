@@ -34,7 +34,7 @@ main .table-of-contents h3 {
     font-size: 18px;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 768px) {
     main .table-of-contents .table-of-contents-card {
         border-bottom: unset;
     }

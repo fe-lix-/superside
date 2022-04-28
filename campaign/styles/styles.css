@@ -254,7 +254,7 @@ main .section>div {
   padding: 0 2rem;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 768px) {
   html {
     font-size: 100%;
   }
@@ -356,7 +356,7 @@ main .hero-section p {
   }
 }
 
-@media (min-width: var(--max-width)) {
+@media (min-width: 1400) {
 
   main .hero-section {
     margin-left: calc((100vw - var(--max-width) + 32px) / 2);

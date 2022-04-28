@@ -127,7 +127,7 @@ header .nav[aria-expanded='true'] {
 
 /* desktop nav styles */
 
-@media (min-width: 900px) {
+@media (min-width: 1024px) {
   header .nav {
     grid-template-areas: 'brand sections';
     grid-template-columns: 200px 1fr;

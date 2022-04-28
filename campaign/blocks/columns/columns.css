@@ -107,7 +107,7 @@ main .columns .embed-wistia {
     aspect-ratio: 16 / 9;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 768px) {
 
     main .columns>div,
     main .columns>div:nth-child(even) {

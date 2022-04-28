@@ -116,7 +116,7 @@ main .quotes-wrapper.highlight .quotes {
 }
 
 
-@media (min-width: 600px) {
+@media (min-width: 768px) {
   main .quotes .quotes-carousel>div {
     grid-template-areas: 'quote picture''source picture';
   }

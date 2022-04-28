@@ -1,4 +1,4 @@
-main .icons > div {
+main .icons>div {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -7,13 +7,13 @@ main .icons > div {
     font-weight: bold;
 }
 
-main .icons > div > div {
+main .icons>div>div {
     width: 200px;
     margin: 16px;
 }
 
-@media (min-width: 600px) {
-    main .icons > div {
+@media (min-width: 768px) {
+    main .icons>div {
         flex-direction: unset;
     }
 }
