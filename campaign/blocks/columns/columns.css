@@ -28,9 +28,9 @@ main .columns>div:nth-child(even) {
 }
 
 main .columns .form-container {
-    padding: 32px;
     box-shadow: 0px 1px 6px rgb(34 34 34 / 10%);
     flex-basis: 100%;
+    width: 100%;
 }
 
 main .columns .form-container h3 {
@@ -50,7 +50,6 @@ main .columns .form-container select {
     border-radius: 4px;
     font-size: 14px;
     line-height: 21px;
-
 }
 
 main .columns .form-container input:hover,
@@ -114,6 +113,10 @@ main .columns .embed-wistia {
         flex-direction: unset;
     }
 
+    main .columns>div>div:first-child {
+        margin-right: 16px;
+    }
+
     main .columns .form-container {
         flex-basis: 390px;
         flex-shrink: 0;
@@ -124,10 +127,6 @@ main .columns .embed-wistia {
 @media (min-width: 1024px) {
     main .columns>div>div {
         width: 100%;
-    }
-
-    main .columns>div>div:first-child {
-        margin-right: 16px;
     }
 
     main .columns>div>div:last-child {
