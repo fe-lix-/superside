@@ -13,7 +13,6 @@ footer {
   margin-top: 0;
   padding: var(--pad-xl);
   padding-bottom: 0;
-  background: rgba(var(--text-color), .05);
   color: rgb(var(--footer-color));
 }
 
