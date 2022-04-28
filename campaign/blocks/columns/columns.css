@@ -20,7 +20,6 @@ main .columns>div {
     padding: 24px 0;
     align-items: center;
     justify-content: space-between;
-    padding-top: 88px;
 }
 
 main .columns>div:nth-child(even) {
