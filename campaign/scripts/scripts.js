@@ -503,10 +503,19 @@ document.addEventListener('click', () => sampleRUM('click'));
 
 loadPage(document);
 
-export function decorateIcons(main) {
-  main.querySelectorAll('.icon').forEach((img) => {
+/**
+ * load LCP block and/or wait for LCP in default content.
+ */
+
+export async function decorateIcons(element) {
+  element.querySelectorAll('img.icon').forEach(async (img) => {
     const { pathname } = new URL(img.src);
-    img.src = `${window.hlx.codeBasePath}${pathname}`;
+    const resp = await fetch(`${window.hlx.codeBasePath}${pathname}`);
+    const svg = await resp.text();
+    const span = document.createElement('span');
+    span.className = img.className;
+    span.innerHTML = svg;
+    img.replaceWith(span);
   });
 }
 
