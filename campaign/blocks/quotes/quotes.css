@@ -20,6 +20,7 @@ main .quotes .quotes-carousel::-webkit-scrollbar {
 main .quotes .quotes-carousel>div {
   padding: 64px 0 0 32px;
   margin: 0 32px;
+  margin-left: 80px;
   display: grid;
   grid-template-areas: 'quote''source''picture';
   align-items: top;
@@ -54,7 +55,7 @@ main .quotes-quote:before {
   z-index: -1;
   width: 69px;
   height: 38px;
-  top: -15px;
+  top: -25px;
   left: -15px;
 }
 
@@ -88,8 +89,8 @@ main .quotes-buttons>div {
   width: 16px;
   height: 16px;
   background-color: grey;
-  border-radius: 8px;
-  margin: 12px;
+  border-radius: 50%;
+  margin: 4px;
 }
 
 main .quotes-buttons>div.selected {
@@ -110,7 +111,7 @@ main .quotes-wrapper.highlight {
 }
 
 main .quotes-wrapper.highlight .quotes {
-  max-width: 900px;
+  max-width: 1024px;
   margin: auto;
   padding: 2rem;
 }
@@ -124,6 +125,14 @@ main .quotes-wrapper.highlight .quotes {
   main .quotes-picture {
     padding-left: 32px;
   }
+
+  main .quotes-quote {
+    padding-top: 16px;
+  }
+
+  main .quotes-buttons>div {
+    margin: 12px;
+  }
 }
 
 
@@ -131,7 +140,7 @@ main .quotes-wrapper.highlight .quotes {
   main .quotes-quote:before {
     width: 137px;
     height: 76px;
-    top: -28px;
+    top: -32px;
     left: -32px;
   }
 
@@ -140,5 +149,9 @@ main .quotes-wrapper.highlight .quotes {
     height: 86px;
     bottom: -66px;
     right: 20px;
+  }
+
+  main .quotes-quote {
+    padding-left: 96px;
   }
 }
