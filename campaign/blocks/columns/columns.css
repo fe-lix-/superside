@@ -20,6 +20,7 @@ main .columns>div {
     padding: 24px 0;
     align-items: center;
     justify-content: space-between;
+    text-align: center;
 }
 
 main .columns>div:nth-child(even) {
@@ -127,6 +128,11 @@ main .columns .embed-wistia {
     main .columns>div,
     main .columns>div:nth-child(even) {
         flex-direction: unset;
+        text-align: left;
+    }
+
+    main .columns>div>div {
+        width: 100%;
     }
 
     main .columns>div>div:first-child {
@@ -141,10 +147,6 @@ main .columns .embed-wistia {
 }
 
 @media (min-width: 1024px) {
-    main .columns>div>div {
-        width: 100%;
-    }
-
     main .columns>div>div:last-child {
         margin-left: 16px;
     }
