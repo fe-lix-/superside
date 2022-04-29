@@ -17,25 +17,40 @@ function createSelect(fd) {
   return select;
 }
 
+async function addValidationError(el) {
+  if (!el.parentNode.querySelector('span.error')) {
+    el.insertAdjacentHTML('afterend', '<span class="error">Required</span>');
+  }
+  el.parentNode.classList.add('error');
+}
+
 async function submitForm(form) {
+  let isError = false;
   const payload = {};
   [...form.elements].forEach((fe) => {
+    if (fe.required && fe.value === '') {
+      isError = true;
+      addValidationError(fe);
+    }
     if (fe.type === 'checkbox') {
       if (fe.checked) payload[fe.id] = fe.value;
     } else if (fe.id) {
       payload[fe.id] = fe.value;
     }
   });
-  const resp = await fetch(form.dataset.action, {
-    method: 'POST',
-    cache: 'no-cache',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ data: payload }),
-  });
-  await resp.text();
-  return payload;
+
+  // we don;'t need id for now
+  // const resp = await fetch(form.dataset.action, {
+  //   method: 'POST',
+  //   cache: 'no-cache',
+  //   headers: {
+  //     'Content-Type': 'application/json',
+  //   },
+  //   body: JSON.stringify({ data: payload }),
+  // });
+
+  // await resp.text();
+  return isError ? false : payload;
 }
 
 function createButton(fd) {
@@ -46,12 +61,18 @@ function createButton(fd) {
       event.preventDefault();
       button.setAttribute('disabled', '');
       const payload = await submitForm(button.closest('form'));
+
+      if (!payload) {
+        button.removeAttribute('disabled');
+        return;
+      }
+
       let redirectTo = fd.Extra;
       if (fd.Extra.includes('calendly')) {
         redirectTo = `https://www.superside.com/calendly?calendlyEventType=superside-customer-development&calendlyEventName=call&eventType=call&full_name=${payload.first}%20${payload.last}&email=${payload.email}&a1=${payload.phone}&a2=${payload.company}&companySize=${payload['company-size']}&a4=${payload['company-size']}`;
       }
       window.location.href = redirectTo;
-    }, { once: true });
+    });
   }
   return button;
 }
@@ -61,6 +82,19 @@ function createInput(fd) {
   input.type = fd.Type;
   input.id = fd.Field;
   input.setAttribute('placeholder', fd.Placeholder);
+
+  if (fd.Mandatory === 'x') {
+    input.setAttribute('required', '');
+  }
+
+  input.addEventListener('change', () => {
+    const errorSpan = input.parentNode.querySelector('span.error');
+    if (errorSpan) {
+      input.parentNode.classList.remove('error');
+      errorSpan.remove();
+    }
+  });
+
   return input;
 }
 
@@ -76,7 +110,6 @@ async function createForm(formURL) {
   const resp = await fetch(pathname);
   const json = await resp.json();
   const form = document.createElement('form');
-  console.log(pathname);
   // eslint-disable-next-line prefer-destructuring
   form.dataset.action = pathname.split('.json')[0];
   json.data.forEach((fd) => {
