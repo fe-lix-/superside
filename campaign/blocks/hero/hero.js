@@ -142,6 +142,11 @@ export default async function decorate(block) {
 
   const title = getContentFor('Title');
   const subtitle = getContentFor('Subtitle');
+  const subtitleForDesktop = subtitle.cloneNode(true);
+  subtitleForDesktop.classList.add('desktop');
+
+  const subtitleForMobile = subtitle.cloneNode(true);
+  subtitleForMobile.classList.add('mobile');
 
   block.textContent = '';
 
@@ -149,9 +154,16 @@ export default async function decorate(block) {
   const left = document.createElement('div');
   const right = document.createElement('div');
 
+  const imageWrapper = createOptimizedPicture(image, '', true);
+  const imageForDesktop = imageWrapper.cloneNode(true);
+  imageForDesktop.classList.add('desktop');
+
+  const imageForMobile = imageWrapper.cloneNode(true);
+  imageForMobile.classList.add('mobile');
+
   left.append(title);
-  left.append(subtitle);
-  left.append(createOptimizedPicture(image, '', true));
+  left.append(subtitleForDesktop);
+  left.append(imageForDesktop);
   wrapper.append(left);
 
   if (formUrl) {
@@ -163,6 +175,7 @@ export default async function decorate(block) {
 
     wrapper.append(right);
   }
-
+  wrapper.append(subtitleForMobile);
+  wrapper.append(imageForMobile);
   block.append(wrapper);
 }
