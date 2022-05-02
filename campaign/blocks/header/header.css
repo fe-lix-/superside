@@ -2,16 +2,16 @@
 
 header .nav {
   display: grid;
-  grid-template-areas: 'hamburger brand' 'sections sections';
+  grid-template-areas: 'hamburger brand''sections sections';
   grid-template-columns: 0px 1fr;
   grid-template-rows: 108px 1fr;
   align-items: center;
-  padding: 0 2rem;
   position: absolute;
   z-index: 1;
   /* background-color: rgba(var(--background-color),.92); */
   width: 100vw;
   height: 64px;
+  padding: 0 2rem;
   box-sizing: border-box;
 }
 
@@ -36,12 +36,14 @@ header .nav[aria-expanded='false'] .nav-hamburger-icon::before {
   border-radius: 3px;
   background: currentColor;
 }
+
 header .nav[aria-expanded='false'] .nav-hamburger-icon::after,
 header .nav[aria-expanded='false'] .nav-hamburger-icon::before {
   content: "";
   position: absolute;
   top: -6px;
 }
+
 header .nav[aria-expanded='false'] .nav-hamburger-icon::after {
   top: 6px;
 }
@@ -56,6 +58,7 @@ header .nav[aria-expanded='true'] .nav-hamburger-icon {
   border-radius: 5px;
   transform: translate(-3px, -2px);
 }
+
 header .nav[aria-expanded='true'] .nav-hamburger-icon::after,
 header .nav[aria-expanded='true'] .nav-hamburger-icon::before {
   content: "";
@@ -70,6 +73,7 @@ header .nav[aria-expanded='true'] .nav-hamburger-icon::before {
   top: 8px;
   left: 1px
 }
+
 header .nav[aria-expanded='true'] .nav-hamburger-icon::after {
   transform: rotate(-45deg)
 }
@@ -105,7 +109,7 @@ header .nav-sections h2 {
 header .nav-sections ul {
   list-style: none;
   padding-left: 0;
-} 
+}
 
 header .nav-sections li {
   font-size: 20px;
@@ -123,7 +127,7 @@ header .nav[aria-expanded='true'] {
 
 /* desktop nav styles */
 
-@media (min-width: 900px) {
+@media (min-width: 1024px) {
   header .nav {
     grid-template-areas: 'brand sections';
     grid-template-columns: 200px 1fr;
@@ -137,9 +141,9 @@ header .nav[aria-expanded='true'] {
     display: flex;
     flex-direction: row;
     background-color: unset;
-    width: unset;        
+    width: unset;
   }
-  
+
   header .nav[aria-expanded='true'] .nav-sections {
     display: flex;
     min-height: unset;
@@ -171,7 +175,7 @@ header .nav[aria-expanded='true'] {
     /* background-color: rgba(var(--background-color),.92); */
     width: 300px;
     left: 0px;
-  } 
+  }
 }
 
 
@@ -193,12 +197,6 @@ header .nav .nav-brand p {
 
 header .nav .nav-brand p:nth-child(2) {
   padding-left: 18px;
-}
-
-@media (min-width: 1200px) {
-  header .nav {
-    margin-left: calc((100vw - 1200px + 32px) / 2);
-  }    
 }
 
 /* dark header styling */

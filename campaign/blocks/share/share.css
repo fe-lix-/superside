@@ -2,11 +2,12 @@ main .share .icon {
     border-radius: 23px;
     height: 46px;
     width: 46px;
-    background-color: #1f154a;
+    background-color: rgb(var(--social-icon-background));
     padding: 10px;
     box-sizing: border-box;
 }
 
 main .share {
-    margin-top: 32px;
+    display: flex;
+    justify-content: center;
 }

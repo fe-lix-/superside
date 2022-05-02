@@ -5,7 +5,7 @@ main .quotes .quotes-carousel {
   scroll-behavior: auto;
 }
 
-main .quotes .quotes-carousel > div {
+main .quotes .quotes-carousel>div {
   box-sizing: border-box;
   width: 100%;
   flex-shrink: 0;
@@ -17,11 +17,12 @@ main .quotes .quotes-carousel::-webkit-scrollbar {
   display: none;
 }
 
-main .quotes .quotes-carousel > div {
+main .quotes .quotes-carousel>div {
   padding: 64px 0 0 32px;
   margin: 0 32px;
+  margin-left: 80px;
   display: grid;
-  grid-template-areas: 'quote' 'source' 'picture';
+  grid-template-areas: 'quote''source''picture';
   align-items: top;
 }
 
@@ -54,7 +55,7 @@ main .quotes-quote:before {
   z-index: -1;
   width: 69px;
   height: 38px;
-  top: -15px;
+  top: -25px;
   left: -15px;
 }
 
@@ -73,6 +74,7 @@ main .quotes-quote:after {
 main .quotes-source {
   grid-area: source;
 }
+
 main .quotes-source p {
   font-size: 16px;
   font-family: var(--font-family-heading);
@@ -83,15 +85,15 @@ main .quotes-source p:first-child {
   font-size: 12px;
 }
 
-main .quotes-buttons > div {
+main .quotes-buttons>div {
   width: 16px;
   height: 16px;
   background-color: grey;
-  border-radius: 8px;
-  margin: 12px;
+  border-radius: 50%;
+  margin: 4px;
 }
 
-main .quotes-buttons > div.selected {
+main .quotes-buttons>div.selected {
   background-color: rgb(var(--link-color));
 }
 
@@ -102,45 +104,43 @@ main .quotes .quotes-buttons {
 }
 
 main .quotes-wrapper.highlight {
-  background-color: #60FD8130;
   max-width: 100%;
   margin: 0;
   padding: 0;
   z-index: -2;
 }
 
-main .quotes-wrapper.highlight::before {
-  background-image: url('./highlight-border.svg');
-  content: '';
-  display: block;
-  background-color: white;
-  background-position: center center;
-  background-size: cover;
-  height: 100px;
-}
-
 main .quotes-wrapper.highlight .quotes {
-  max-width: 900px;  
+  max-width: 1024px;
   margin: auto;
   padding: 2rem;
 }
 
 
-@media (min-width: 600px) {
-  main .quotes .quotes-carousel > div {
-    grid-template-areas: 'quote picture' 'source picture';
+@media (min-width: 768px) {
+  main .quotes .quotes-carousel>div {
+    grid-template-areas: 'quote picture''source picture';
   }
+
   main .quotes-picture {
     padding-left: 32px;
+  }
+
+  main .quotes-quote {
+    padding-top: 16px;
+  }
+
+  main .quotes-buttons>div {
+    margin: 12px;
   }
 }
 
 
-@media (min-width:900px) {
+@media (min-width:1024px) {
   main .quotes-quote:before {
     width: 137px;
     height: 76px;
-    top: -28px;
+    top: -32px;
     left: -32px;
   }
 
@@ -150,5 +150,8 @@ main .quotes-wrapper.highlight .quotes {
     bottom: -66px;
     right: 20px;
   }
-}
 
+  main .quotes-quote {
+    padding-left: 96px;
+  }
+}

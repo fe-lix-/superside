@@ -1,37 +1,38 @@
-main > .section > div.works-wrapper {
-    --works-item-width: 350px;
-    max-width: 1200px;
-    overflow: hidden;
-    height: 400px;
-    position: relative;
-    padding: 0;
-    margin-bottom: 64px;
+main>.section>div.works-wrapper {
+  --works-item-width: 350px;
+  max-width: var(--max-width);
+  overflow: hidden;
+  height: 400px;
+  position: relative;
+  padding: 0;
+  margin-bottom: 64px;
 }
 
-main .works  {
-    position: absolute;
-    display: flex;
-    left: 50%;
-    transform: translate(-50%, 0);
-    box-sizing: border-box;
-  }
+main .works {
+  position: absolute;
+  display: flex;
+  left: 50%;
+  transform: translate(-50%, 0);
+  box-sizing: border-box;
+}
 
 main .works.works-even:after {
   content: '';
   width: calc(var(--works-item-width) + 32px);
 }
-  
-main .works > div {
-    width: var(--works-item-width);
-    flex-shrink: 0;
-    display: block;
-    margin: 16px;
-  }
 
-  main .works .works-image {
-    line-height: 0;
-  }  
-  main .works .works-description::before {
+main .works>div {
+  width: var(--works-item-width);
+  flex-shrink: 0;
+  display: block;
+  margin: 16px;
+}
+
+main .works .works-image {
+  line-height: 0;
+}
+
+main .works .works-description::before {
   content: '';
   display: block;
   width: 100%;
@@ -43,7 +44,8 @@ main .works > div {
   top: -19px;
 }
 
-main .works-wrapper::before, main .works-wrapper::after {
+main .works-wrapper::before,
+main .works-wrapper::after {
   content: '';
   display: block;
   width: 50px;
@@ -59,7 +61,7 @@ main .works-wrapper::before, main .works-wrapper::after {
   background-color: rgb(var(--link-color), 0.7);
   padding: 10px;
   box-sizing: border-box;
-  transform: scale( -1, 1);
+  transform: scale(-1, 1);
   z-index: 1;
   margin: 20px;
 }
@@ -67,11 +69,11 @@ main .works-wrapper::before, main .works-wrapper::after {
 main .works-wrapper::after {
   right: 0;
   left: unset;
-  transform: scale( 1, 1);
+  transform: scale(1, 1);
 }
 
-main .works > div:nth-child(even) .works-description::before {
-  transform: scale( -1, 1);
+main .works>div:nth-child(even) .works-description::before {
+  transform: scale(-1, 1);
 }
 
 
@@ -86,15 +88,15 @@ main .works .works-description {
 }
 
 main .works-wrapper::-webkit-scrollbar {
-    display: none;
-  }
+  display: none;
+}
 
 main .works.works-toleft {
-  animation: toleft 0.3s ease-out;  
+  animation: toleft 0.3s ease-out;
 }
 
 main .works.works-toright {
-  animation: toright 0.3s ease-out;  
+  animation: toright 0.3s ease-out;
 }
 
 
@@ -102,6 +104,7 @@ main .works.works-toright {
   0% {
     padding-right: 750px;
   }
+
   99% {
     padding-right: 0;
   }
@@ -111,6 +114,7 @@ main .works.works-toright {
   0% {
     padding-left: 750px;
   }
+
   99% {
     padding-left: 0;
   }
