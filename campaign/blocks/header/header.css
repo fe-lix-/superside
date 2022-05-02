@@ -2,7 +2,7 @@
 
 header .nav {
   display: grid;
-  grid-template-areas: 'hamburger brand''sections sections';
+  grid-template-areas: 'hamburger brand' 'sections sections';
   grid-template-columns: 0px 1fr;
   grid-template-rows: 108px 1fr;
   align-items: center;
@@ -178,8 +178,7 @@ header .nav[aria-expanded='true'] {
   }
 }
 
-
-header .nav .icon-logo {
+header .nav .icon-logo svg {
   height: 32px;
 }
 
