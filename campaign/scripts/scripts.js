@@ -494,6 +494,7 @@ initHlx();
  * ------------------------------------------------------------
  */
 
+const ICON_ROOT = '/icons'
 const LCP_BLOCKS = ['animation']; // add your LCP blocks to the list
 const RUM_GENERATION = 'project-1'; // add your RUM generation information here
 
@@ -504,18 +505,27 @@ document.addEventListener('click', () => sampleRUM('click'));
 loadPage(document);
 
 /**
- * load LCP block and/or wait for LCP in default content.
+ * Replace icons with inline SVG and prefix with codeBasePath.
+ * @param {Element} element
  */
-
-export async function decorateIcons(element) {
-  element.querySelectorAll('img.icon').forEach(async (img) => {
-    const { pathname } = new URL(img.src);
-    const resp = await fetch(`${window.hlx.codeBasePath}${pathname}`);
-    const svg = await resp.text();
-    const span = document.createElement('span');
-    span.className = img.className;
-    span.innerHTML = svg;
-    img.replaceWith(span);
+ export function decorateIcons(element = document) {
+  element.querySelectorAll('span.icon').forEach(async (span) => {
+    if (span.classList.length < 2 || !span.classList[1].startsWith('icon-')) {
+      return;
+    }
+    const icon = span.classList[1].substring(5);
+    // eslint-disable-next-line no-use-before-define
+    const resp = await fetch(`${window.hlx.codeBasePath}${ICON_ROOT}/${icon}.svg`);
+    if (resp.ok) {
+      const iconHTML = await resp.text();
+      if (iconHTML.match(/<style/i)) {
+        const img = document.createElement('img');
+        img.src = `data:image/svg+xml,${encodeURIComponent(iconHTML)}`;
+        span.appendChild(img);
+      } else {
+        span.innerHTML = iconHTML;
+      }
+    }
   });
 }
 
