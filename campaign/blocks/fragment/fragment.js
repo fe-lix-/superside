@@ -13,9 +13,10 @@
 
 import {
   decorateMain,
-  loadBlocks,
 // eslint-disable-next-line import/no-unresolved
 } from '../../scripts/scripts.js';
+
+import { loadBlocks } from '../../scripts/lib-franklin.js';
 
 async function decorateFragment($block) {
   const ref = $block.textContent;

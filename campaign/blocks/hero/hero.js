@@ -1,4 +1,4 @@
-import { createOptimizedPicture, readBlockConfig } from '../../scripts/scripts.js';
+import { createOptimizedPicture, readBlockConfig } from '../../scripts/lib-franklin.js';
 
 function createSelect(fd) {
   const select = document.createElement('select');

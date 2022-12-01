@@ -1,5 +1,5 @@
 /* eslint-disable object-curly-newline */
-import { toClassName } from '../../scripts/scripts.js';
+import { toClassName } from '../../scripts/lib-franklin.js';
 
 function getAnimation(animations, width) {
   const idealBreakpoint = width < 600 ? 'mobile' : 'desktop';
