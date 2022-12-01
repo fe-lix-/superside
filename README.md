@@ -1,5 +1,6 @@
 # Your Project's Title...
-Your project's description...
+
+Superside website
 
 ## Environments
 - Preview: https://main--superside--hlxsites.hlx.page/
