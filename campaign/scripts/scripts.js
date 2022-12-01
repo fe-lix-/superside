@@ -494,7 +494,7 @@ initHlx();
  * ------------------------------------------------------------
  */
 
-const ICON_ROOT = '/icons'
+const ICON_ROOT = '/icons';
 const LCP_BLOCKS = ['animation']; // add your LCP blocks to the list
 const RUM_GENERATION = 'project-1'; // add your RUM generation information here
 
@@ -508,7 +508,7 @@ loadPage(document);
  * Replace icons with inline SVG and prefix with codeBasePath.
  * @param {Element} element
  */
- export function decorateIcons(element = document) {
+export function decorateIcons(element = document) {
   element.querySelectorAll('span.icon').forEach(async (span) => {
     if (span.classList.length < 2 || !span.classList[1].startsWith('icon-')) {
       return;
